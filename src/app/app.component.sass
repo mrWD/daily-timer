@@ -1,0 +1,77 @@
+.inner
+  position: relative
+  height: 100vh
+  background-color: #ffffff
+
+  @media (prefers-color-scheme: dark)
+    background-color: #222222
+
+.title
+  margin-top: 0
+  margin-bottom: 48px
+  padding-top: 24px
+  font-family: sans-serif
+  text-align: center
+  font-size: 30px
+  color: #222222
+
+  @media (prefers-color-scheme: dark)
+    color: #ffffff
+
+.form
+  margin-bottom: 200px
+  text-align: center
+
+  &__title
+    display: block
+    padding-bottom: 8px
+    font-family: sans-serif
+    text-align: center
+    font-size: 25px
+    font-weight: 600
+    color: #222222
+
+    @media (prefers-color-scheme: dark)
+      color: #ffffff
+
+  &__text
+    font-family: sans-serif
+    text-align: center
+    font-size: 25px
+    font-weight: 600
+    color: #222222
+
+    @media (prefers-color-scheme: dark)
+      color: #ffffff
+
+  &__field
+    width: 55px
+
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 1px solid #0675d8
+    border-radius: 3px
+
+    font-family: sans-serif
+    text-align: center
+    font-size: 25px
+    font-weight: 600
+    color: #222222
+
+.timer
+  margin-top: 0
+  margin-bottom: 0
+  font-family: sans-serif
+  text-align: center
+  font-size: max(4vw, 4vh)
+  color: #222222
+
+  @media (prefers-color-scheme: dark)
+    color: #ffffff
+
+  &_danger
+    color: #d9534e
+
+  &__time
+    font-size: max(6vw, 6vh)
