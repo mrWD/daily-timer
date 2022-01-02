@@ -1,7 +1,7 @@
 {
   "name": "daily-timer",
   "short_name": "daily-timer",
-  "theme_color": "#1976d2",
+  "theme_color": "#222222",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

@@ -9,7 +9,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static('./dist/daily-timer/'));
+app.use(express.static('./dist/daily-timer'));
 
 app.get('/*', (req, res) => {
   res.sendFile('index.html', { root: 'dist/daily-timer/' });
