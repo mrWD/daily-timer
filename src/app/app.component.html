@@ -23,9 +23,32 @@
     >
   </form>
 
-  <p class="timer" [ngClass]="{ 'timer_danger': hoursLeft < 1 }">
-    <strong class="timer__time">{{ hoursLeft }}</strong> h
-    <strong class="timer__time">{{ minutesLeft }}</strong> m
-    <strong class="timer__time">{{ secondsLeft }}</strong> s left
-  </p> 
+  <p
+    class="timer"
+    [ngClass]="{
+      'timer_warning': hoursLeft === 0 && minutesLeft >= 0 && secondsLeft >= 0,
+      'timer_danger': !isNotExtrawork
+    }"
+  >
+    <span *ngIf="!isNotExtrawork" class="timer__title">You have been doing extrawork for</span>
+
+    <strong class="timer__time">{{ getNumberModule(hoursLeft) }}</strong> h
+    <strong class="timer__time">{{ getNumberModule(minutesLeft) }}</strong> m
+    <strong class="timer__time">{{ getNumberModule(secondsLeft) }}</strong> s
+
+    <span *ngIf="isNotExtrawork">left</span>
+  </p>
+
+  <ul class="list">
+    <li
+      *ngFor="let i of [].constructor(hoursLeft + 1)"
+      class="list__item"
+      [ngClass]="{ 'list__item_danger': !hoursLeft }"
+      [ngClass]="{
+        'list__item_warning': hoursLeft === 0 && minutesLeft >= 0 && secondsLeft >= 0,
+        'list__item_danger': !isNotExtrawork
+      }"
+    >
+    </li>
+  </ul>
 </div>

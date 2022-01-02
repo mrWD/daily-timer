@@ -33,10 +33,18 @@ export class AppComponent {
     return this.endTime.diff(moment(), 'seconds') % 60;
   }
 
+  get isNotExtrawork() {
+    return this.hoursLeft >= 0 && this.minutesLeft >= 0 && this.secondsLeft >= 0;
+  }
+
   handleChange(event: Event, type: 'hours' | 'minutes') {
     const value = (event.target as HTMLTextAreaElement).value || '00';
 
     localStorage.setItem(type, value);
+  }
+
+  getNumberModule(value: number) {
+    return Math.abs(value);
   }
 
   startTimer() {

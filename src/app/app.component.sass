@@ -1,3 +1,8 @@
+$el-width: 16px
+
+$danger-color: #d9534e
+$warning-color: #f0ad4e
+
 .inner
   position: relative
   height: 100vh
@@ -60,7 +65,7 @@
 
 .timer
   margin-top: 0
-  margin-bottom: 0
+  margin-bottom: 32px
   font-family: sans-serif
   text-align: center
   font-size: max(4vw, 4vh)
@@ -69,8 +74,50 @@
   @media (prefers-color-scheme: dark)
     color: #ffffff
 
+  &_warning
+    color: $warning-color
+
   &_danger
-    color: #d9534e
+    color: $danger-color
+
+  &__title
+    display: block
 
   &__time
     font-size: max(6vw, 6vh)
+
+.list
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  width: $el-width * 8 * 2
+  margin: 0 auto
+  padding-left: $el-width
+
+  &__item
+    display: block
+    height: 64px
+    width: $el-width
+    margin-bottom: $el-width
+    margin-right: $el-width
+    border-radius: 3px
+    background-color: #fff
+
+    @media (prefers-color-scheme: dark)
+      color: #222222
+
+    &:last-child
+      animation: blinking linear 1s infinite alternate
+
+    &_danger
+      background-color: $danger-color
+
+    &_warning
+      background-color: $warning-color
+
+@keyframes blinking
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
